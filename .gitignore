@@ -1,0 +1,13 @@
+# django
+pycache
+*.sqlite3*
+.env
+/media
+/static
+
+# idea
+__pycache__
+.idea
+
+# Pytest
+.pytest_cache
