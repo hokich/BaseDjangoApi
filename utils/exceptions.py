@@ -43,7 +43,7 @@ class AppBaseException(Exception):
         self,
         message: str,
         code: int,
-        http_status: Optional[int] = 500,
+        http_status: int = 500,
         context: Optional[Dict] = None,
     ):
         super().__init__(message)
@@ -54,14 +54,10 @@ class AppBaseException(Exception):
 
 
 class InternalErrorException(AppBaseException):
-    def __init__(
-        self, message="InternalError", code=6000, http_status=500, context=None
-    ):
-        super().__init__(message, code, http_status, context)
+    def __init__(self) -> None:
+        super().__init__("InternalError", 6000, 500)
 
 
 class DataNotFoundException(AppBaseException):
-    def __init__(
-        self, message="DataNotFound", code=6001, http_status=404, context=None
-    ):
-        super().__init__(message, code, http_status, context)
+    def __init__(self) -> None:
+        super().__init__("DataNotFound", 6001, 404)

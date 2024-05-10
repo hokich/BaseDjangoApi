@@ -9,5 +9,5 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to="products/")
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
